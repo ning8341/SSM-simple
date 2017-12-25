@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cn.hnust.dao.ProjectDao">
+
+	<resultMap type="com.cn.hnust.pojo.Project" id="Base">
+			<id column="name" property="name" />
+			<result column="project_time" property="projecTime" />
+			<result column="context" property="className" />
+			<result column="skills" property="age" />
+	
+   </resultMap>
+   
+   <select id="findByName"   parameterType="string"   resultType="com.cn.hnust.pojo.Project">
+       select name,project_time as prjecTime,context,skills
+       from
+       project_t  
+       where name=#{name}
+   </select>
+   
+   
+</mapper>

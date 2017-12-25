@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cn.hnust.dao.StudentDao">
+	<!-- <resultMap id="BaseResultMap" type="com.cn.hnust.pojo.Student"> <id 
+		column="id" property="id" jdbcType="INTEGER" /> <result column="name" property="name" 
+		jdbcType="VARCHAR" /> <result column="class_name" property="className" jdbcType="VARCHAR" 
+		/> <result column="age" property="age" jdbcType="INTEGER" /> <result column="sex" 
+		property="sex" jdbcType="VARCHAR" /> <result column="teacher_id" property="teacherId" 
+		jdbcType="INTEGER" /> </resultMap> -->
+	<!-- 数据库字段跟实体类属性不一致，以上resultmap这第一个方法不管用，我采用了第二种方法 起个别名的方式。 1.使用resultMap时，在select语句配置中，要有resultMap替换原来的resultType。 
+		2.resultMap中的column要与查询到的字段名一致，property要与实体类的属性一致。 3.在通常情况下，java中的实体类中的属性一般是采用驼峰命名命名的，而数据库中表的字段则用下划线区分字母。在这种情况下， 
+		Mybatis提供了一个全局属性mapUnderscoreToCamelCase来解决两者名字不一致的问题。 
+		<settings> 
+		     其他配置... 
+		<setting name="mapUnderscoreToCamelCase" value="true"/> 
+		其他配置 
+		</settings> 
+		注意：因为该属性是全局属性，所以需要配置在Mybatis的配置文件中，而不是Mapper.xml映射文件中。 -->
+	<resultMap type="com.cn.hnust.pojo.Student" id="Base">
+			<id column="id" property="id" />
+			<result column="name" property="name" />
+			<result column="class_name" property="className" />
+			<result column="age" property="age" />
+			<result column="sex" property="sex" />
+			<result column="teacher_id" property="teacherId" />
+   </resultMap>
+	<!-- 使用sql片段 -->
+	
+	<sql id="student_context">
+		id,name,class_name as className,age,sex,teacher_id as
+		teacherId
+	</sql>
+    <!-- 根据姓名查找 -->
+    <select id="findByName" parameterType="string" resultType="com.cn.hnust.pojo.Student">
+     select 
+       <include refid="student_context"></include>
+     from student_t
+     where
+     name=#{name}
+    </select>
+    <!-- 根据id查找 -->
+	<select id="getById" parameterType="java.lang.Integer" resultType="com.cn.hnust.pojo.Student">
+	select
+	  <include refid="student_context"></include>
+	  from student_t
+	  where 
+	  id=#{id}
+	</select>
+	<!-- 根据id更新数据 -->
+    <update id="updateStudent" parameterType="com.cn.hnust.pojo.Student">
+      update student_t set  name=#{name},class_name =#{className},age=#{age},
+      sex=#{sex},teacher_id=#{teacherId} 
+      where id =#{id}
+    </update>
+    <!-- 添加学生信息功能 id这块有问题-->
+    <insert id="insertStudent" parameterType="com.cn.hnust.pojo.Student">
+       insert into student_t values(#{id},#{name},#{className},#{age},#{sex},#{teacherId})
+    </insert>
+    <!-- 根据id删除 -->
+    <delete id="deleteStudent" parameterType="java.lang.Integer">
+       delete from student_t where id=#{id}
+    </delete>
+</mapper>
