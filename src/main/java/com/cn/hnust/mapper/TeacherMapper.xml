@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cn.hnust.dao.TeacherDao">
+	 <resultMap id="baseResultMap" type="com.cn.hnust.pojo.Teacher"> 
+	        <id column="t_id" property="id"/>  
+            <result column="t_name" property="name" />  
+            <result column="t_age" property="age" />   
+            <result column="t_sex" property="sex" /> 
+	 </resultMap>
+   <!-- 老师对学生，一对多，一个老师有多个学生 -->
+    <resultMap id="teacher_sql" type="com.cn.hnust.pojo.Teacher" extends="baseResultMap" >         
+		<collection property="student" javaType="java.util.List" ofType="com.cn.hnust.pojo.Student">  
+            <id column="id" property="id" />
+			<result column="name" property="name" />
+			<result column="class_name" property="className" />
+			<result column="age" property="age" />
+			<result column="sex" property="sex" />
+			<result column="teacher_id" property="teacherId" />             
+        </collection>  	
+    </resultMap>
+<!-- 老师对学生是一对多  -->
+  <select id="queryStudents" resultMap="teacher_sql">
+      select 
+        t.t_id,
+        t.t_name,        
+        t.t_age,
+        t.t_sex,
+        s.id,
+        s.name,
+        s.class_name,
+        s.age,
+        s.sex,
+        s.teacher_id    
+        from 
+                teacher_t t left join   
+                student_t s
+         on
+                t.t_id=s.teacher_id
+  </select>
+ <!-- 查询老师信息  -->
+   <select id="queryTeacher" resultMap="baseResultMap">
+       select * from teacher_t
+   </select>
+</mapper>

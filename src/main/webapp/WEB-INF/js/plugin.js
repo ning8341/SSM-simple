@@ -1,4 +1,4 @@
-// JavaScript Document
+// JavaScript Document自己写的插件
 +(function($){
 	//Plugin For Pic
 	//============================

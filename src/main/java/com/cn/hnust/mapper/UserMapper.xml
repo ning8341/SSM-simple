@@ -16,6 +16,9 @@
  <insert id="insertUser" parameterType="com.cn.hnust.pojo.User">
  insert into user_t values(#{id},#{userName},#{password},#{email},#{phoneNumber})
  </insert>
- 
- 
+<!--  查询 用户信息 -->
+ <select id="queryUser" resultMap="BaseResultMap">
+   select id,user_name as userName,password,email,phoneNumber
+   from user_t
+ </select>
 </mapper>

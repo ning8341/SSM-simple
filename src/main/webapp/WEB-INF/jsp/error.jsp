@@ -6,12 +6,46 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
 </head>
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/error.css" />
+<script language="JavaScript">
+	function dosearch() {
+		var sf = document.searchform;
+		var submitto = sf.sengine.value;
+		var value =  sf.searchterms.value;
+		alert("感谢您的吐槽，88");
+		
+		/* + escape(sf.searchterms.value */
+		window.location.href = submitto;
+		return false;
+	}
+</script>
 <body>
-	<p>${message }</p>
-	<a href="${pageContext.request.contextPath}/register">
-		<button type="button" class="register-tis">点击注册</button>
-	</a>
+	<div class="header">
+		<img src="images/Logo_sample.png" />
+	</div>
+
+	<p class="error">404</p>
+
+	<div class="content">
+		<h2>你好，页面找不到了呀！</h2>
+
+	<p class="text">
+		 轻轻的我将离开你，正如你轻轻的归去。来吐槽几句吧
+		 <form name="searchform" onSubmit="return dosearch();">
+				<input type="hidden" name="sengine" value="${pageContext.request.contextPath}/login" />	
+				<input type="text" name="searchterms" class="inputform">
+				<input type="submit" name="SearchSubmit" value="发送"class="button"> 
+			</form>
+			<!-- Change www.yoursite.com to your website domain -->
+		</p>
+				
+			<p class="links">
+				<a id="button" href="${pageContext.request.contextPath}/register">&larr; Back</a>
+				<!--These are links. You can change it to a page you want to by replacing the '#' with your url.-->
+			</p>
+		</div>
+
 	
-</body>
+
+		</body>
 </html>

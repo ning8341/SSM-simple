@@ -1,9 +1,14 @@
 body, table {
 	font-size: 15px;
+	background-image: url("../images/background3.jpg");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 body {
-	font-family: 'Microsoft Yahei', 'Î¢ÈíÑÅºÚ', Arial, 'Hiragino Sans GB', 'ËÎÌå';
+	font-family: 'Microsoft Yahei', 'Î¢ï¿½ï¿½ï¿½Åºï¿½', Arial, 'Hiragino Sans GB', 'ï¿½ï¿½ï¿½ï¿½';
 	color: #555;
 }
 
@@ -29,4 +34,34 @@ td {
 	border-style: solid;
 	border-color: #666666;
 	background-color: #ffffff;
+}
+.button_operation{
+	float:right;
+}
+.hi{
+	font-size: 20px;
+	color:solid;
+	font-family:Î¢ï¿½ï¿½ï¿½Åºï¿½;
+}
+#footer{
+	position:fixed;
+	bottom: 0px;
+	font-family:Î¢ï¿½ï¿½ï¿½Åºï¿½;
+	left:40%;
+}
+
+alert_li{
+	font-size:800px;
+	color:red;
+	
+}
+
+
+.deal_div{
+	position:absolute;
+	width:120px;
+	height:100%;
+	left:10px;
+	top:23%;
+	
 }

@@ -160,7 +160,18 @@
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>1.9.13</version>
 		</dependency>
-		
+		<!-- 加入MD5加密  -->
+	<dependency>
+		<groupId>commons-codec</groupId>
+		<artifactId>commons-codec</artifactId>
+		<version>1.10</version>
+	</dependency>
+	<!-- 加入poi准备导出excel -->
+	<dependency>
+		<groupId>org.apache.poi</groupId>
+		<artifactId>poi-ooxml</artifactId>
+		<version>3.8</version>
+	</dependency>
 	</dependencies>
 	
   

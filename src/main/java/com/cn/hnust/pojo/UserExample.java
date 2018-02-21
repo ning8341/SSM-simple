@@ -2,7 +2,7 @@ package com.cn.hnust.pojo;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/*这个是generator自动生成的pojo*/
 public class UserExample {
     protected String orderByClause;
 

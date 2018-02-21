@@ -10,6 +10,11 @@
      <link href="css/table.css" rel="stylesheet"> 
   </head>
   <body>
+     <div >   
+        <form action="${pageContext.request.contextPath }/list" method="post">
+           <input type="submit" value="返回"/>    
+        </form>
+    </div>
     <div id="title_context">
       <p align="center" style="font-size: 20px;font-style:inherit;">学生信息管理系统</p>
     </div>
@@ -48,11 +53,11 @@
 
 		</table>
 	</div>
-    <div action="${pageContext.request.contextPath }/ajax" method="post">   
-        <input type="submit" value="test  ajax"/>
-    </div>
+ <%@ include file="footer.jsp" %>   
 	<!-- 引入js -->
 <script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/alert.js"></script>
 </body>
 
 </html>

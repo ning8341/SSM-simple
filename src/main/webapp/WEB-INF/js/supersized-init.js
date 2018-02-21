@@ -1,35 +1,38 @@
-jQuery(function($){
+jQuery(function($) {
 
-    $.supersized({
+			$.supersized({
 
-        // 功能
-        slide_interval     : 4000,    // 转换之间的长度
-        transition         : 1,    // 0 - 无，1 - 淡入淡出，2 - 滑动顶，3 - 滑动向右，4 - 滑底，5 - 滑块向左，6 - 旋转木马右键，7 - 左旋转木马
-        transition_speed   : 1000,    // 转型速度
-        performance        : 1,    // 0 - 正常，1 - 混合速度/质量，2 - 更优的图像质量，三优的转换速度//（仅适用于火狐/ IE浏览器，而不是Webkit的）
+						// 鍔熻兘
+						slide_interval : 4000, // 杞崲涔嬮棿鐨勯暱搴�
+						transition : 1, // 0 - 鏃狅紝1 - 娣″叆娣″嚭锛�2 - 婊戝姩椤讹紝3 - 婊戝姩鍚戝彸锛�4 - 婊戝簳锛�5 - 婊戝潡鍚戝乏锛�6 - 鏃嬭浆鏈ㄩ┈鍙抽敭锛�7 - 宸︽棆杞湪椹�
+						transition_speed : 1000, // 杞瀷閫熷害
+						performance : 1, // 0 - 姝ｅ父锛�1 - 娣峰悎閫熷害/璐ㄩ噺锛�2 - 鏇翠紭鐨勫浘鍍忚川閲忥紝涓変紭鐨勮浆鎹㈤�熷害//锛堜粎閫傜敤浜庣伀鐙�/ IE娴忚鍣紝鑰屼笉鏄疻ebkit鐨勶級
 
-        // 大小和位置
-        min_width          : 0,    // 最小允许宽度（以像素为单位）
-        min_height         : 0,    // 最小允许高度（以像素为单位）
-        vertical_center    : 1,    // 垂直居中背景
-        horizontal_center  : 1,    // 水平中心的背景
-        fit_always         : 0,    // 图像绝不会超过浏览器的宽度或高度（忽略分钟。尺寸）
-        fit_portrait       : 1,    // 纵向图像将不超过浏览器高度
-        fit_landscape      : 0,    // 景观的图像将不超过宽度的浏览器
+						// 澶у皬鍜屼綅缃�
+						min_width : 0, // 鏈�灏忓厑璁稿搴︼紙浠ュ儚绱犱负鍗曚綅锛�
+						min_height : 0, // 鏈�灏忓厑璁搁珮搴︼紙浠ュ儚绱犱负鍗曚綅锛�
+						vertical_center : 1, // 鍨傜洿灞呬腑鑳屾櫙
+						horizontal_center : 1, // 姘村钩涓績鐨勮儗鏅�
+						fit_always : 0, // 鍥惧儚缁濅笉浼氳秴杩囨祻瑙堝櫒鐨勫搴︽垨楂樺害锛堝拷鐣ュ垎閽熴�傚昂瀵革級
+						fit_portrait : 1, // 绾靛悜鍥惧儚灏嗕笉瓒呰繃娴忚鍣ㄩ珮搴�
+						fit_landscape : 0, // 鏅鐨勫浘鍍忓皢涓嶈秴杩囧搴︾殑娴忚鍣�
 
-        // 组件
-        slide_links        : 'blank',    // 个别环节为每张幻灯片（选项：假的，'民'，'名'，'空'）
-        slides             : [    // 幻灯片影像
-                                 {image : './images/background1.jpg'},
-                                 {image : './images/background2.jpg'},
-                                 {image : './images/background3.jpg'}
-                       ]
+						// 缁勪欢
+						slide_links : 'blank', // 涓埆鐜妭涓烘瘡寮犲够鐏墖锛堥�夐」锛氬亣鐨勶紝'姘�'锛�'鍚�'锛�'绌�'锛�
+						slides : [ // 骞荤伅鐗囧奖鍍�
+						{
+									image : './images/background1.jpg'
+								}, {
+									image : './images/background2.jpg'
+								}, {
+									image : './images/background3.jpg'
+								}]
 
-    });
+					});
 
-});
+		});
 /*
-本代码由js代码收集并编辑整理;
-尊重他人劳动成果;
-转载请保留js代码链接 - www.jsdaima.com
-*/
+ 鏈唬鐮佺敱js浠ｇ爜鏀堕泦骞剁紪杈戞暣鐞�;
+ 灏婇噸浠栦汉鍔冲姩鎴愭灉;
+ 杞浇璇蜂繚鐣檍s浠ｇ爜閾炬帴 - www.jsdaima.com
+ */

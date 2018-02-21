@@ -9,9 +9,11 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserDao {
 
-	User selectUserByName(String userName);//¸ù¾İÓÃ»§ÃûÀ´²éÓÃ»§
+	User selectUserByName(String userName);//æ ¹æ®åå­—æŸ¥ç”¨æˆ·
 	
-	void insertUser(User user);//×¢²áÓÃ»§
+	void insertUser(User user);//æ·»åŠ ç”¨æˆ·
+
+	List  <User>  queryUser();//æŸ¥è¯¢ç”¨æˆ·
 	
 	
 	

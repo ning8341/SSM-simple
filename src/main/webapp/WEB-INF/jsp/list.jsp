@@ -10,17 +10,27 @@
      <link href="css/table.css" rel="stylesheet"> 
   </head>
   <body>
-    <div align="right" id="button_operation">
+    <div align="right" class="button_operation">
        <form action="${pageContext.request.contextPath }/findS" method="post">
-       <input  type="text" id="name" name="name">
-       <button type="submit" >查询</button>
-       </form>
-          
+       <input  type="text" id="name" name="name" >
+       <button type="submit" >按名称查找</button>
+       </form>      
     </div>
-  
+    <div align="right" class="button_operation">
+       <form action="${pageContext.request.contextPath }/findS2" method="post">
+       <input  type="text" id="id" name="id" >
+       <button type="submit" >按id查找</button>
+       </form>      
+    </div>
+    <div align="right" class="button_operation">
+	<form action="${pageContext.request.contextPath }/insertS" method="post">
+		<button type="submit">新增学生信息</button>
+	</form>
+   </div>
+    
   
     <div id="title_context">
-      <p align="center" style="font-size: 20px;font-style:inherit;">学生信息管理系统</p>
+      <p align="right" style="font-size: 20px;font-style:inherit;">学生信息管理系统</p>
     </div>
     <div>
 	<table id="page_table">
@@ -73,14 +83,17 @@
 	</span>
       </tr>
 </div>
-  <div align="right">
-	<form action="${pageContext.request.contextPath }/insertS" method="post">
-		<button type="submit">新增</button>
-	</form>
+  <div class="deal_div">
+  
+   <a href=${pageContext.request.contextPath }/queryAll>查询所有 </a><br>
+   <a href=${pageContext.request.contextPath }/queryTE>查询老师</a><br>
+   <a href=${pageContext.request.contextPath }/queryT>查询老师跟学生</a><br>
+   <a href=${pageContext.request.contextPath }/export>导出用户信息</a>
   </div>
-
+<%@ include file="footer.jsp" %>
 	<!-- 引入js -->
 <script src="js/jquery.min.js"></script>
+<script src="js/alert.js"></script>
 </body>
 
 </html>

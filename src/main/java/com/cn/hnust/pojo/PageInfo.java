@@ -1,5 +1,5 @@
 package com.cn.hnust.pojo;
-
+/*分页信息实体类*/
 public class PageInfo {
 	private int pageSize;
 	private int pageIndex;

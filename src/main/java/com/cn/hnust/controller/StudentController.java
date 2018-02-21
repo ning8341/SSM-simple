@@ -7,9 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.cn.hnust.pojo.Course;
 import com.cn.hnust.pojo.Student;
+import com.cn.hnust.service.PageService;
 import com.cn.hnust.service.StudentService;
 
 @Controller
@@ -24,9 +27,19 @@ public class StudentController {
 		mav.setViewName("list2");
 		return mav;
 	}
+	/*按照学员id查找*/
+	@RequestMapping("/findS2")
+	public ModelAndView getById(int id,Model model){
+		ModelAndView mav = new ModelAndView();
+		Student student=studentService.findById(id);
+		model.addAttribute("student", student);
+		mav.setViewName("list3");
+		return mav;
+	}
+	
 	@RequestMapping("/updateS")//转到修改页面
 	public String toUpdate(int id,Model model){
-		Student student =studentService.findById(id);
+		Student student =(Student) studentService.findById(id);
 		model.addAttribute("student", student);//回显数据
 		return "edit";
 	}
@@ -39,7 +52,7 @@ public class StudentController {
 		student.setClassName(className);
 		student.setName(name);
 		student.setSex(sex);
-		student.setteacherId(teacherId);
+		student.setTeacherId(teacherId);
 		student.setId(id);
 		if(student.getId()<70){
 			studentService.addStudent(student);//修改
@@ -55,7 +68,7 @@ public class StudentController {
 		return "edit";
 	}
 	
-	//
+	//删除
 	@RequestMapping("/deleteS")
 	public ModelAndView toDelete(@Param("id")int id){
 		ModelAndView mav = new ModelAndView();
@@ -63,5 +76,13 @@ public class StudentController {
 		mav.setViewName("list");
 		return mav;		
 	}
-
+   //查询所有，包含课程信息
+	@RequestMapping(value="/queryAll")
+	public String toFindAll(Model model){
+		List<Student>list =studentService.findAll();
+		model.addAttribute("list", list);
+		
+		return "list4";
+	}
+	
 }

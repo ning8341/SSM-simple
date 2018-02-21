@@ -1,5 +1,11 @@
 package com.cn.hnust.pojo;
 
+
+/**
+ * 用户表
+ * @author 1
+ *
+ */
 public class User {
     private Integer id;
 
@@ -10,6 +16,8 @@ public class User {
     private String email;
     
     private Integer phoneNumber;
+    
+   
 
 	public Integer getId() {
 		return id;
@@ -51,4 +59,8 @@ public class User {
 		this.phoneNumber = phoneNumber;
 	}
     
+    
+    
+
+	
 }

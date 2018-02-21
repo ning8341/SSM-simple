@@ -1,7 +1,7 @@
 package com.cn.hnust.pojo;
 
 import java.util.List;
-
+/*分页实体类*/
 public class Page<T> {
 	private int currPage;// 当前页数
 	private int pageSize;// 每页显示的记录数

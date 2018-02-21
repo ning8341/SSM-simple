@@ -1,22 +1,16 @@
 package com.cn.hnust.service;
 
-import java.util.List;
 
-import org.springframework.stereotype.Service;
 
 import com.cn.hnust.pojo.User;
 
 public interface UserService  {
 
-//	User getUserById(int userId);
-//    
-//	List<User> findAll();
-//
-//	User getUserByName(String username);
+	boolean login(String userName, String password);//是否登录
 
-	boolean login(String userName, String password);
-
-	void register(User user);
+	void register(User user);//注册
 	
-
+    User reLogin(String userName);
+    
+    void export(String[] titles);//导出excel
 }

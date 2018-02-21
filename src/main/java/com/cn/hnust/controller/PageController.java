@@ -13,9 +13,7 @@ import com.cn.hnust.service.StudentService;
 @Controller
 public class PageController {
 	@Autowired
-	private PageService pageService;
-	@Autowired
-	private StudentService studentService;
+	private PageService pageService;	
 	//∑÷“≥¥¶¿Ì  
     @RequestMapping("/list")    
     public ModelAndView getPage(@RequestParam(defaultValue="1")int currentPage,Model model){      

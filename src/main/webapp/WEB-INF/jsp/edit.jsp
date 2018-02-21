@@ -7,7 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
  <title>董维宁-个人网站</title>
     <!-- CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
      <link href="css/table.css" rel="stylesheet"> 
+     
   </head>
   <body>
     <div id="title_context">
@@ -28,20 +30,25 @@
 						
 			</tr>			  
 				<c:forEach items="student">
-					<td><input type="text" id="id" name="id" value="<c:out value="${student.id}"></c:out>"></input></td>
-					<td><input type="text" id="name"name="name" value="<c:out value="${student.name }"></c:out>"></input></td>
-					<td><input type="text" id="className" name="className" value="<c:out value="${student.className}"></c:out>"></input></td>
-					<td><input type="text" id="age" name="age" value="<c:out value="${student.age}"></c:out>"></input></td>
-					<td><input type="text" id="sex" name="sex" value="<c:out value="${student.sex}"></c:out>"></input></td>
-					<td><input type="text" id="teacherId" name="teacherId" value="<c:out value="${student.teacherId}"></c:out>"></input></td>
+					<td><input type="text" id="edit_id" name="id" value="<c:out value="${student.id}"></c:out>"></input></td>
+					<td><input type="text" id="edit_name"name="name" value="<c:out value="${student.name }"></c:out>"></input></td>
+					<td><input type="text" id="edit_className" name="className" value="<c:out value="${student.className}"></c:out>"></input></td>
+					<td><input type="text" id="edit_age" name="age" value="<c:out value="${student.age}"></c:out>"></input></td>
+					<td><input type="text" id="edit_sex" name="sex" value="<c:out value="${student.sex}"></c:out>"></input></td>
+					<td><input type="text" id="edit_teacherId" name="teacherId" value="<c:out value="${student.teacherId}"></c:out>"></input></td>
 				</c:forEach>
                 
 		</table>
 	</div>
-	   <input type="submit" value="保存"/>  
+	   <input class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" type="submit" id="edit_deal" value="保存"/>    
     </form>
+    
+    
+<%@ include file="footer.jsp" %>    
 	<!-- 引入js -->
 <script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/file.js"></script>
 </body>
 
 </html>

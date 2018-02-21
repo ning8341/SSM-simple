@@ -1,4 +1,12 @@
 eclipse.preferences.version=1
+encoding//src/main/java/com/cn/hnust/controller/ImgController.java=gbk
+encoding//src/main/java/com/cn/hnust/controller/ProjectController.java=gbk
+encoding//src/main/java/com/cn/hnust/controller/UserController.java=UTF-8
+encoding//src/main/java/com/cn/hnust/pojo/Student.java=gbk
 encoding//src/main/webapp/WEB-INF/css/blog.css=UTF-8
 encoding//src/main/webapp/WEB-INF/css/style.css=UTF-8
+encoding//src/main/webapp/WEB-INF/css/table.css=utf-8
 encoding//src/main/webapp/WEB-INF/images/1.txt=UTF-8
+encoding//src/main/webapp/WEB-INF/js/file.js=UTF-8
+encoding//src/main/webapp/WEB-INF/js/supersized-init.js=UTF-8
+encoding/readme.txt=gbk

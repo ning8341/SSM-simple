@@ -20,13 +20,13 @@ public class ProjectController {
 	private ProjectSevice projectService;
     @RequestMapping("/findData")
 	@ResponseBody
-	public Project findData(Model model,HttpServletRequest request,HttpSession httpSession,HttpServletResponse response){
+	public Project findData(Model model,HttpSession httpSession){
     	//username是从httpSession中取出来的
     	String name = (String) httpSession.getAttribute("username");
-    	System.out.println("获取到当前登录用户的name为："+name);
+    	System.out.println(name);
     	Project project = projectService.getByName(name);
     	model.addAttribute("project", project);
-    	System.out.println(project.toString());
+    	
     	return project;
     }
 }
